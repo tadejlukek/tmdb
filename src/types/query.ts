@@ -1,0 +1,1 @@
+export type TMDBQueryParameters = Record<string, string | number | boolean>;
