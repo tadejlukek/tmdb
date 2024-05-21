@@ -11,14 +11,12 @@ import Accordion from "./primitives/filterAccordion";
 
 type Props = {
   filters: TMDBQueryParameters;
-  setFilters: React.Dispatch<React.SetStateAction<TMDBQueryParameters>>;
   applyFilters: (localFilters: TMDBQueryParameters) => void;
   genres: GenreType[];
 };
 
 export default function Filters({
   filters,
-  setFilters,
   applyFilters,
   genres,
 }: Props) {

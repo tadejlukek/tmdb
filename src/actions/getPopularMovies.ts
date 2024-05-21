@@ -1,9 +1,7 @@
 "use server";
 
 import QueryTMDB from "@/utils/themoviedb/query";
-
 import { TMDBQueryParameters } from "@/types/query";
-
 import { MovieType, TMDBMovieResponseType, TMDBMovieType } from "@/types/movie";
 
 export default async function getPopularMovies(

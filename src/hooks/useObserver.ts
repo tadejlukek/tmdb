@@ -9,7 +9,7 @@ export default function useObserver({
   exit?: () => void;
   condition?: boolean;
 }) {
-  const loadMoreRef = useRef(null);
+  const observerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,18 +23,18 @@ export default function useObserver({
       { threshold: 1.0 }
     );
 
-    const currentLoadMoreRef = loadMoreRef.current;
+    const currentObserverRef = observerRef.current;
 
-    if (currentLoadMoreRef) {
-      observer.observe(currentLoadMoreRef);
+    if (currentObserverRef) {
+      observer.observe(currentObserverRef);
     }
 
     return () => {
-      if (currentLoadMoreRef) {
-        observer.unobserve(currentLoadMoreRef);
+      if (currentObserverRef) {
+        observer.unobserve(currentObserverRef);
       }
     };
   }, [enter, exit, condition]);
 
-  return loadMoreRef;
+  return observerRef;
 }

@@ -1,7 +1,6 @@
 "use server";
 
 import QueryTMDB from "@/utils/themoviedb/query";
-
 import { GenreType, TMDBGenreResponseType } from "@/types/genre";
 
 export default async function getMovieFilters(): Promise<GenreType[]> {
